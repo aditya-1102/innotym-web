@@ -1,0 +1,23 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand">Navbar</a>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <div>
+      <form class="form-inline" *ngIf="!isHidden">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button *ngIf="userobj.role=='admin'" class="btn btn-primary" routerLink="/user">Users</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button *ngIf="!isHidden" class="btn btn-primary" routerLink="/add-money">Add Money</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button *ngIf="!isHidden" class="btn btn-primary" routerLink="/do-transaction">Do Transaction</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button *ngIf="!isHidden" class="btn btn-primary" routerLink="/my-transaction">My Transaction</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div *ngIf="!isHidden">
+          <button mat-raised-button color="default" style="text-transform: uppercase;">{{userobj.name}}</button>
+        </div>
+      </form>
+    </div>
+</nav>

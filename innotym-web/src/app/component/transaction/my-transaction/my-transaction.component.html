@@ -1,0 +1,45 @@
+<div class="container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="refId.name">
+          <th mat-header-cell *matHeaderCellDef> Ref_ID.....</th>
+          <td mat-cell *matCellDef="let element"> {{element.refId.name}} </td>
+        </ng-container>
+
+       <!-- Name Column -->
+        <ng-container matColumnDef="userId">
+          <th mat-header-cell *matHeaderCellDef> User_ID........................................................ </th>
+          <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+       </ng-container>
+      
+        <!-- Salary Column -->
+        <ng-container matColumnDef="initialAmount">
+          <th mat-header-cell *matHeaderCellDef>Initial_Amount.......................</th>
+          <td mat-cell *matCellDef="let element"> {{element.initialAmount}} </td>
+        </ng-container>
+    
+        <!-- Salary Column -->
+        <ng-container matColumnDef="transferAmount">
+          <th mat-header-cell *matHeaderCellDef> Transfer_Amount............ </th>
+          <td mat-cell *matCellDef="let element"> {{element.transferAmount}} </td>
+        </ng-container>
+    
+        <!-- Role Column -->
+        <ng-container matColumnDef="transactionType">
+            <th mat-header-cell *matHeaderCellDef> Type................ </th>
+            <td mat-cell *matCellDef="let element"> {{element.transactionType}} </td>
+          </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator #paginator [length]="resultSize"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>
+</div>
+   

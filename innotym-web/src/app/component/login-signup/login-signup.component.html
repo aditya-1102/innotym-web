@@ -1,0 +1,55 @@
+<div class="container">
+    <mat-card>
+    <div class="col-md-4 offset-md-4">
+        <mat-tab-group>
+            <mat-tab label="Login">         <!-- LOGIN FORM-->
+                <form class="form-container" (ngSubmit)="login()" [formGroup]="loginForm">
+                    <mat-form-field>
+                        <input matInput placeholder="Email" type="email" formControlName="email">
+                      </mat-form-field>
+                      <mat-form-field>
+                        <input matInput placeholder="Password" type="password" formControlName="password">
+                      </mat-form-field>
+                      <div>
+                          <button mat-raised-button type="submit" color="primary">Login</button>
+                          <button mat-raised-button type="reset" color="default">Cancel</button>
+                      </div>
+                </form>
+            </mat-tab>
+    
+            <mat-tab label="Sign-Up">       <!-- SIGNUP FORM-->
+                <form class="form-container" (ngSubmit)="signup()" novalidate [formGroup]="signupForm">
+                    <mat-form-field appearance="fill">
+                        <input matInput class="fix" placeholder="Name" type="text" formControlName="name">
+                        <mat-error *ngIf="signupForm.controls.name.invalid && signupForm.controls.name.touched">
+                            Name is required
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <input matInput class="fix" placeholder="Email" type="email" formControlName="email">
+                        <mat-error *ngIf="signupForm.controls.email.invalid && signupForm.controls.email.touched">
+                            Email is required
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <input matInput class="fix" placeholder="Password" type="password" formControlName="password">
+                        <mat-error *ngIf="signupForm.controls.password.invalid && signupForm.controls.password.touched">
+                            Password is required
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <input matInput class="fix" placeholder="Amount" type="amount" formControlName="amount">
+                        <mat-error *ngIf="signupForm.controls.amount.invalid && signupForm.controls.amount.touched">
+                            Amount is required
+                        </mat-error>
+                    </mat-form-field>
+                    <div>
+                        <button mat-raised-button type="submit" color="primary">Signup</button>
+                        <button mat-raised-button type="reset" color="default">Cancel</button>
+                    </div>
+                </form>
+            </mat-tab>
+          </mat-tab-group>
+    </div>
+</mat-card>
+</div>

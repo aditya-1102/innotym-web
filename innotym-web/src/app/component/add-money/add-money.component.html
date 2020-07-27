@@ -1,0 +1,24 @@
+<div class="container">
+    <br><br>
+    <div class="col-md-6 offset-md-3">
+        <mat-card>
+            <form [formGroup]="addMoneyForm" novalidate (ngSubmit)="addMoney()">
+                <label>Amount</label>
+                <br>
+                <mat-form-field>
+                    <input matInput type="number" placeholder="Enter Amount" formControlName="amount" class="form-control">
+                    <mat-error *ngIf="addMoneyForm.controls.amount.invalid">
+                        *Amount is required
+                    </mat-error>
+                </mat-form-field>
+                <br><br>
+                <div>
+                    <button mat-raised-button type="submit" color="primary">Submit</button>
+                    &nbsp;&nbsp;
+                    <button mat-raised-button type="submit" color="default">Cancel</button>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+    <br><br>
+</div>
